@@ -1,5 +1,6 @@
 # P1_HackerRank
 Códigos de HackerRank del primer parcial.
+Nombre: Rafael Antonio López García
 
 Captura de pantalla:
 
