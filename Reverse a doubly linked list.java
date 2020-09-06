@@ -12,26 +12,26 @@
      */
     static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
 
-        if(head == null){
-            return head;
+        if(head == null){  // si la lista está vacía
+            return head;  // regresamos el inicio
         }
 
         else{
-            DoublyLinkedListNode aux = head;
-            DoublyLinkedListNode nuevo = head;
+            DoublyLinkedListNode aux = head;  // inicializamos un nodo auxiliar que apunte al inicio
+            DoublyLinkedListNode nuevo = head;   // inicializamos un nodo nuevo que apunte al inicio
             
 
-            while(aux != null){
+            while(aux != null){  // mientras no lleguemos al final
 
-                DoublyLinkedListNode ant = aux.prev;
-                aux.prev = aux.next;
-                aux.next = ant;
+                DoublyLinkedListNode ant = aux.prev;  // un nodo anterior guarda el nodo antes de auxiliar
+                aux.prev = aux.next;  // ese nodo anterior lo volvemos el nodo siguiente
+                aux.next = ant;  // el nodo siguiente se vuelve el anterior
 
-                nuevo = aux;
-                aux = aux.prev;
+                nuevo = aux;  // el nuevo nodo se vuelve el nodo auxiliar
+                aux = aux.prev;  // y avanzamos el nodo auxiliar
             }
 
-            return nuevo;
+            return nuevo;  // regresamos el nuevo nodo
         }
     }
 
