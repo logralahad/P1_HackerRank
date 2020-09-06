@@ -12,25 +12,25 @@
      */
     static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
 
-        DoublyLinkedListNode nuevo = new DoublyLinkedListNode(data);
+        DoublyLinkedListNode nuevo = new DoublyLinkedListNode(data);   // creamos el nuevo nodo con dato como valor
 
-        DoublyLinkedListNode aux = head;
-        DoublyLinkedListNode ant = null;
+        DoublyLinkedListNode aux = head;  // inicializamos un nuevo nodo que apunte al inicio
+        DoublyLinkedListNode ant = null; // inicializamos un nuevo nodo
 
-        if(nuevo.data <= head.data){
-            nuevo.next = head;
-            return nuevo;
+        if(nuevo.data <= head.data){  // si el valor del nuevo nodo es menor o igual a la cabeza
+            nuevo.next = head;  // lo hacemos nuestra nueva cabeza
+            return nuevo;  // regresamos el nuevo nodo
         }
 
         else{
-            while(aux != null && aux.data < nuevo.data){
-                ant = aux;
-                aux = aux.next;
+            while(aux != null && aux.data < nuevo.data){  // si no, mientras auxiliar no sea nulo y el valor del nuevo nodo sea mayor a auxiliar
+                ant = aux;  // movemos anterior a donde estaba auxiliar
+                aux = aux.next;  // auxiliar lo movemos al nodo siguiente
             }
 
-            ant.next = nuevo;
-            nuevo.next = aux;
-            return head;
+            ant.next = nuevo;  // conectamos el nodo anterior con el nuevo nodo
+            nuevo.next = aux; // conectamos el nuevo nodo con auxiliar
+            return head;  // regresamos el inicio
         }
 
     }
